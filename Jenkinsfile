@@ -1,7 +1,10 @@
 #!/usr/bin/env groovy
 
 pipeline {
-    agent any
+    agent {
+        sh 'docker build -t terraform .'
+        sh 'docker run terraform'
+    }
 
     stages {
         stage("Terragrunt init") {
