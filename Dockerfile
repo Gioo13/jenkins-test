@@ -6,11 +6,10 @@ RUN apt-get update \
  && apt-get clean
 
 # Install terraform
-RUN curl -o /tmp/terraform.zip -fsSL "https://releases.hashicorp.com/terraform/1.6.6/terraform_1.6.6_linux_amd64.zip" \
+RUN curl -o /usr/local/bin/terraform.zip -fsSL "https://releases.hashicorp.com/terraform/1.6.6/terraform_1.6.6_linux_amd64.zip" \
  && cd /usr/local/bin \
- && unzip /tmp/terraform.zip \
- && chmod +x terraform \
- && rm /tmp/terraform.zip
+ && unzip terraform.zip \
+ && rm terraform.zip
 
 # Install terragrunt
 RUN curl -o /usr/local/bin/terragrunt -fsSL "https://github.com/gruntwork-io/terragrunt/releases/download/v0.54.18/terragrunt_linux_amd64" \
