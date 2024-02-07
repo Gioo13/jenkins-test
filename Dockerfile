@@ -1,4 +1,4 @@
-FROM registry.dasrn.generali.it/gbs/sc-0913-jks-swarm-jnlps-base:0.2
+FROM ubuntu:14.04
 
 RUN apt-get update \
  && apt-get install -y curl git graphviz openssh-client python-pip python-yaml unzip \
