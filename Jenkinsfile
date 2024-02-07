@@ -9,5 +9,10 @@ pipeline {
                 bat 'docker run terraform'
             }
         }
+        stage("Terraform init") {
+            steps {
+                bat 'terraform --version'
+            }
+        }
     }
 }
