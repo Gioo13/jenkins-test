@@ -15,3 +15,5 @@ RUN curl -o /tmp/terraform.zip -fsSL "https://releases.hashicorp.com/terraform/1
 # Install terragrunt
 RUN curl -o /usr/local/bin/terragrunt -fsSL "https://github.com/gruntwork-io/terragrunt/releases/download/v0.54.18/terragrunt_linux_amd64" \
  && chmod +x /usr/local/bin/terragrunt
+
+ENV PATH="/usr/local/bin:${PATH}"
