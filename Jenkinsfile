@@ -6,7 +6,7 @@ pipeline {
         stage("Build docker images") {
             steps {
                 bat 'docker build -t terraform .'
-                bat 'docker run -it terraform'
+                bat 'docker run -i terraform'
             }
         }
         stage("Terraform init") {
