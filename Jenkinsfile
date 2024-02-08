@@ -6,7 +6,7 @@ pipeline {
         stage("Build docker images") {
             steps {
                 bat 'docker build -t terraform .'
-                bat 'winpty docker run -it terraform'
+                sh 'docker run -it terraform'
             }
         }
         stage("Terraform init") {
