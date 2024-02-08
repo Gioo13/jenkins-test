@@ -14,8 +14,6 @@ pipeline {
         stage("Setup") {
             steps {
                 script {
-                    bat "docker stop container || true"
-                    bat "docker rm container || true"
                     def dockerImage ='terraform_image'
                     docker.image(dockerImage).pull()
                     def containerId = docker.image(dockerImage).run("--user root --rm -it -v ${pwd()}:/mnt --name terraform_container")
